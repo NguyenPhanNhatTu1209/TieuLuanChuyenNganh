@@ -1,0 +1,25 @@
+@import "../../../style/Variables.scss";
+
+.roleChoose {
+  margin-bottom: 30px;
+  gap: 20px;
+  &-role:hover {
+    color: green;
+  }
+  &-role {
+    cursor: pointer;
+    border: 1px solid black;
+    padding: 15px 40px;
+    font-weight: bold;
+    font-size: large;
+  }
+  &-role.active {
+    background-color: #82ae46;
+    border: none;
+    color: white !important;
+  }
+}
+
+#userManagement-email {
+  cursor: pointer;
+}

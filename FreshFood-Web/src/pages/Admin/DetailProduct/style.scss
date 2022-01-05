@@ -1,0 +1,17 @@
+@import "../../../style/Variables.scss";
+
+.updateProduct {
+  background-color: #82ae46;
+  margin: 1rem auto;
+  margin-bottom: 5rem;
+  padding: 20px 40px !important;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  &-left {
+    padding: 1rem;
+    flex: 1;
+  }
+  &-right {
+    padding: 1rem;
+    flex: 1;
+  }
+}

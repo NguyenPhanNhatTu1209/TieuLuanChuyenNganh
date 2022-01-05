@@ -1,0 +1,36 @@
+@import "../../style/Variables.scss";
+
+.signUpPage {
+  &-form {
+    border-radius: 3%;
+    & a {
+      color: #82ae46;
+    }
+    margin-bottom: $pm-80;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    &-img {
+      width: 50%;
+      & img {
+        border-top-left-radius: 3%;
+        border-bottom-left-radius: 3%;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &-content {
+      & p:first-child {
+        font-size: x-large;
+      }
+      padding: 60px 100px 60px 100px;
+      width: 50%;
+    }
+    .btn {
+      background-color: #82ae46;
+    }
+    .btn:hover {
+      background-color: white;
+      border: 1px solid black;
+    }
+  }
+}

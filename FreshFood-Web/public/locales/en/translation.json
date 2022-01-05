@@ -1,0 +1,278 @@
+{
+  "navbar": {
+    "Home": "Home",
+    "Chat": "Chat",
+    "Shop": "Shop",
+    "Order": "Order",
+    "Contact": "Contact",
+    "Login": "Sign In",
+    "Logout": "LOG OUT",
+    "Product": "Product",
+    "Cart": "Cart",
+    "CheckOut": "CheckOut",
+    "Analytics": "Analytics",
+    "Create": "Create",
+    "List": "List",
+    "UserManagement": "User Management",
+    "OrderManagement": "Order Management",
+    "Signup": "Sign Up "
+  },
+
+  "subscribe": {
+    "Title": "Subcribe to our Product",
+    "Caption": "Get e-mail updates about our latest shops and special offers",
+    "Input": "Enter email address",
+    "Button": "Subscribe"
+  },
+
+  "footer": {
+    "Title1": "Vegefoods",
+    "Title2": "Menu",
+    "Title3": "Help",
+    "Title4": "Have a Questions?",
+    "Caption1": "Far far away, behind the word mountains, far from the countries VietNam",
+    "Caption2": {
+      "Content1": "Shop",
+      "Content2": "About",
+      "Content3": "Journal",
+      "Content4": "Contact Us"
+    },
+    "Caption3": {
+      "Content1": "Shipping Information",
+      "Content2": "Returns & Exchange",
+      "Content3": "Terms & Conditions",
+      "Content4": "Privacy Policy",
+      "Content5": "FAQs",
+      "Content6": "Contact"
+    }
+  },
+
+  "forgotPass": {
+    "Title": "Enter your E-mail",
+    "Input": "Mail",
+    "Button": "Submit"
+  },
+
+  "homePage": {
+    "Banner1": {
+      "Title1": "We serve Fresh Vegestables & Fruits",
+      "Title2": " We deliver organic vegetables & fruits",
+      "Title3": "100% Fresh & Organic Foods"
+    },
+    "Banner2": {
+      "Title1": "Shipping",
+      "Title2": "Always Fresh",
+      "Title3": "Superior Quality",
+      "Title4": "Support",
+      "Caption1": "Fast shipping",
+      "Caption2": "Product well package",
+      "Caption3": "Quality Products",
+      "Caption4": "24/7 Support"
+    },
+    "Banner3": {
+      "Title1": "Featured Products",
+      "Title2": "RECOMMEND PRODUCT",
+      "Title3": "Fresh Food from around the world"
+    }
+  },
+
+  "shop": {
+    "Banner": {
+      "Title1": "HOME PRODUCTS",
+      "Title2": "PRODUCTS"
+    }
+  },
+
+  "contact": {
+    "Banner1": {
+      "Title1": "HOME CONTACT US",
+      "Title2": "Contact us"
+    },
+    "Banner2": {
+      "Title1": "Address",
+      "Title2": "Phone"
+    },
+    "Info": {
+      "Input1": "Your Name",
+      "Input2": "Your Email",
+      "Input3": "Subject",
+      "Button": "Send Message"
+    }
+  },
+
+  "signin": {
+    "Title1": "Sign into your account",
+    "Title2": "Dont have account? ",
+    "Title3": "SignIn with",
+    "Input1": "Email address",
+    "Input2": "Password",
+    "Button1": "Login",
+    "Button2": "Forgot Pass?",
+    "Button3": "Register here"
+  },
+
+  "signup": {
+    "Title1": "Sign up your account",
+    "Title2": "Already have account? ",
+    "Title3": "SignIn with",
+    "Input1": "Email address",
+    "Input2": "Full Name",
+    "Input3": "Phone",
+    "Input4": "Password",
+    "Input5": "Confirm Password",
+    "Button1": "Register",
+    "Button2": "Signin here"
+  },
+
+  "profile": {
+    "Name": "Name: ",
+    "Phone": "Phone: ",
+    "Modal1": {
+      "Title": "Change Info",
+      "HeaderTitle": "CHANGE INFO",
+      "SubTitle": "Infomation",
+      "Input1": "Phone",
+      "Input2": "Name",
+      "Button": "Submit"
+    },
+    "Modal2": {
+      "Title": "Change Password",
+      "HeaderTitle": "CHANGE PASSWORD",
+      "SubTitle": "Change Pass",
+      "Input1": "Old Password",
+      "Input2": "New Password"
+    }
+  },
+
+  "cart": {
+    "Banner1": {
+      "Title1": "HOME CART",
+      "Title2": "MY CART",
+      "Title3": "Empty Cart"
+    },
+
+    "Banner2": {
+      "Title1": "Cart Totals",
+      "Title2": "Subtotal",
+      "Title3": "Subtotal",
+      "Title4": "TOTAL",
+      "Button": "Proceed to Checkout"
+    },
+
+    "CartInfo": {
+      "Title1": "Image",
+      "Title2": "Product Name",
+      "Title3": "Weight",
+      "Title4": "Price",
+      "Title5": "Quantity",
+      "Title6": "Total"
+    }
+  },
+
+  "checkout": {
+    "HeaderTiltle": "Billing Details",
+    "SubTitle1": "Delivery Address",
+    "SubTitle2": "List items",
+    "Banner1": {
+      "Title1": "HOME CHECKOUT",
+      "Title2": "CHECKOUT"
+    },
+
+    "Banner2": {
+      "Title1": "Cart Totals",
+      "Title2": "Subtotal",
+      "Title3": "Subtotal",
+      "Title4": "TOTAL"
+    },
+
+    "Banner3": {
+      "Title": "Payment Method",
+      "Button": "Place An Order"
+    },
+
+    "CartInfo": {
+      "Title1": "Image",
+      "Title2": "Product Name",
+      "Title3": "Weight",
+      "Title4": "Price",
+      "Title5": "Quantity",
+      "Title6": "Total"
+    }
+  },
+
+  "order": {
+    "Title1": "Wait To Confirm",
+    "Title2": "Wait To Take",
+    "Title3": "Delivering",
+    "Title4": "Delivered",
+    "Title5": "Canceled",
+
+    "Modal": {
+      "HeaderTitle": "Order Detail",
+      "Title1": "Quantity:",
+      "Title2": "Weight:",
+      "Title3": "Price:",
+      "Title4": "Rating: ",
+      "Input": "Comment",
+      "Button": "Submit"
+    },
+    "OrderDetail": {
+      "HeaderTitle": "Order Number: ",
+      "Title1": "Address: ",
+      "Title2": "Total Cost: ",
+      "Title3": "Type of Payment: ",
+      "Button": "Canceled",
+      "Button2": "Next"
+    },
+
+    "Rating": {
+      "Level1": "Terrible",
+      "Level2": "Terrible+",
+      "Level3": "Bad",
+      "Level4": "Bad+",
+      "Level5": "Average",
+      "Level6": "Average+",
+      "Level7": "Great",
+      "Level8": "Great+",
+      "Level9": "Awesome",
+      "Level10": "Awesome+"
+    }
+  },
+
+  "admin": {
+    "Analytics": {
+      "TimeEnd": "Time End",
+      "ChartTitle1": "Toltal Order 7 Days",
+      "ChartTitle2": "Toltal Money 7 Days",
+      "ChartTitle3": "Popularity of Products in FreshFood",
+      "SubTitle1": "Toltal Order",
+      "SubTitle2": "Toltal Money",
+      "Caption1": "Order",
+      "Caption2": "Money"
+    },
+
+    "CreateProduct": {
+      "HeaderTitle": "ADD PRODUCT",
+      "HeaderTitle2": "UPDATE PRODUCT",
+      "Title1": "Name",
+      "Title2": "Price",
+      "Title3": "Weight",
+      "Title4": "Quantity",
+      "Title5": "Detail",
+      "Title6": "Group Product",
+
+      "Button": "Submit",
+      "Modal": {
+        "HeaderTitle": "ADD GROUP PRODUCT",
+        "Title1": "Name",
+        "Button": "Submit"
+      }
+    },
+
+    "UserManagement": {
+      "Button1": "User",
+      "Button2": "Staff",
+      "Title": "Phone"
+    }
+  }
+}

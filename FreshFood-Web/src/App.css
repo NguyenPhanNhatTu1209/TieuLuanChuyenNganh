@@ -1,0 +1,35 @@
+@import "https://code.highcharts.com/css/highcharts.css";
+.App {
+  text-align: center;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+button {
+  font-size: calc(10px + 2vmin);
+}
+
+.highcharts-title {
+  fill: #434348;
+  font-weight: bold;
+  letter-spacing: 0.3em;
+  font-size: 3em;
+  color: red !important;
+}
+
+.highcharts-subtitle {
+  font-family: "Courier New", monospace;
+  font-style: italic;
+  fill: #7cb5ec;
+}
+
+.highcharts-caption {
+  font-family: "Courier New", monospace;
+  font-style: italic;
+  fill: green;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}

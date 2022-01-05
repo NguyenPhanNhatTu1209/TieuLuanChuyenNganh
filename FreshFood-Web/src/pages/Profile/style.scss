@@ -1,0 +1,48 @@
+@import "../../style/Variables.scss";
+
+.profilePage {
+  &-wrapper {
+    border-radius: 20px;
+    position: relative;
+    margin-bottom: $pm-80;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-family: "Poppins", Arial, sans-serif;
+    &-avatar {
+      position: absolute;
+      left: 44%;
+      top: 18%;
+      height: 150px;
+      width: 150px;
+      margin: 0 auto;
+      & img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &-headerBackground {
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      height: 30vh;
+
+      background-color: #82ae46;
+    }
+    &-bottomBackground {
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      height: 70vh;
+      background-color: #ffffff;
+      .signInPage-form-content {
+        margin: 20px auto;
+        text-align: center;
+        & h3 {
+          padding: 8px;
+        }
+      }
+    }
+  }
+  .changInfomation {
+    padding: 0 30%;
+    text-align: center;
+  }
+}

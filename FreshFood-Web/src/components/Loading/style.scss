@@ -1,0 +1,90 @@
+@import "../../style/Variables.scss";
+.loadingContainer {
+  // height: 100vh;
+  z-index: 20;
+  text-align: center;
+  background-color: rgba(36, 47, 63, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.loader {
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+  position: relative;
+  border: 4px solid $primary-color;
+  top: 50%;
+  animation: loader 2.5s infinite ease;
+  color: $primary-color;
+}
+.loader-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.loader-inner {
+  vertical-align: top;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  background-color: $primary-color;
+  animation: loader-inner 2.5s infinite ease-in;
+}
+
+/* .loader:nth-last-child(){
+  transition-delay: 0.5s;
+} */
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(180deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+
+  25% {
+    height: 0%;
+  }
+
+  50% {
+    height: 100%;
+  }
+
+  75% {
+    height: 100%;
+  }
+
+  100% {
+    height: 0%;
+  }
+}

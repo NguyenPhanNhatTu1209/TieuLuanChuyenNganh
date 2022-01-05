@@ -1,0 +1,278 @@
+{
+  "navbar": {
+    "Home": "Trang Chủ",
+    "Chat": "Nhắn Tin",
+    "Shop": "Cửa Hàng",
+    "Order": "Đơn Hàng",
+    "Contact": "Liên Hệ",
+    "Login": "Đăng Nhập",
+    "Logout": "ĐĂNG XUẤT",
+    "Product": "Sản Phẩm",
+    "Cart": "Giỏ Hàng",
+    "CheckOut": "Thanh Toán",
+    "Analytics": "Phân Tích",
+    "Create": "Tạo Sản Phẩm",
+    "List": "Danh Sách Sản Phẩm",
+    "UserManagement": "Quản Lí Tài Khoản",
+    "OrderManagement": "Quản Lí Đơn hàng",
+    "Signup": "Đăng Ký"
+  },
+
+  "subscribe": {
+    "Title": "Đăng ký để nhận thông báo",
+    "Caption": "Nhận thông báo về sản phẩm mới và các khuyến mãi qua e-mail",
+    "Input": "Nhập e-mail",
+    "Button": "Đăng Ký"
+  },
+
+  "footer": {
+    "Title1": "Thực Phẩm",
+    "Title2": "Danh Sách",
+    "Title3": "Trợ Giúp",
+    "Title4": "Liên Hệ",
+    "Caption1": "Thực phẩm sạch từ khắp nơi trên thế giới",
+    "Caption2": {
+      "Content1": "Cửa Hàng",
+      "Content2": "Về Cửa Hàng",
+      "Content3": "Bài Báo",
+      "Content4": "Liên Hệ"
+    },
+    "Caption3": {
+      "Content1": "Thông Tin Giao Hàng",
+      "Content2": "Đổi & Trả Hàng",
+      "Content3": "Điều Khoản & Điều Kiện",
+      "Content4": "Chính Sách Bảo Mật",
+      "Content5": "FAQs",
+      "Content6": "Liên Hệ"
+    }
+  },
+
+  "forgotPass": {
+    "Title": "Nhập tài khoản mail của bạn",
+    "Input": "Mail",
+    "Button": "Gửi Đi"
+  },
+
+  "homePage": {
+    "Banner1": {
+      "Title1": "Chúng tôi cung cấp rau & trái cây tươi",
+      "Title2": "Chúng tôi vận chuyển thức ăn sạch",
+      "Title3": "100% Thức ăn tươi & sạch"
+    },
+    "Banner2": {
+      "Title1": "Giao Hàng",
+      "Title2": "Luôn Tươi",
+      "Title3": "Chất Lượng Cao",
+      "Title4": "Hỗ Trợ",
+      "Caption1": "Giao Hàng Nhanh",
+      "Caption2": "Đóng Gói Kĩ",
+      "Caption3": "Sản Phẩm Chất Lượng",
+      "Caption4": "Hỗ Trợ 24/7"
+    },
+    "Banner3": {
+      "Title1": "Sản Phẩm Đặc Trưng",
+      "Title2": "SẢN PHẨM KHUYẾN NGHỊ",
+      "Title3": "Thực Phẩm Sạch Khắp Thế Giới"
+    }
+  },
+
+  "shop": {
+    "Banner": {
+      "Title1": "TRANG SẢN PHẨM",
+      "Title2": "SẢN PHẨM"
+    }
+  },
+
+  "contact": {
+    "Banner1": {
+      "Title1": "TRANG THÔNG TIN LIÊN HỆ",
+      "Title2": "THÔNG TIN LIÊN HỆ"
+    },
+    "Banner2": {
+      "Title1": "Địa Chỉ",
+      "Title2": "SĐT"
+    },
+    "Info": {
+      "Input1": "Họ Và Tên",
+      "Input2": "Email",
+      "Input3": "Chủ Đề",
+      "Button": "Gửi Tin Nhắn"
+    }
+  },
+
+  "signin": {
+    "Title1": "Đăng nhập vào tài khoản của bạn",
+    "Title2": "Chưa có tài khoản? ",
+    "Title3": "Đăng nhập bằng",
+    "Input1": "Email",
+    "Input2": "Mật Khẩu",
+    "Button1": "Đăng Nhập",
+    "Button2": "Quên Mật Khẩu?",
+    "Button3": "Đăng ký"
+  },
+
+  "signup": {
+    "Title1": "Đăng ký tài khoản",
+    "Title2": "Đã có tài khoản? ",
+    "Title3": "Đăng nhập bằng",
+    "Input1": "Email",
+    "Input2": "Họ Và Tên",
+    "Input3": "SĐT",
+    "Input4": "Mật Khẩu",
+    "Input5": "Xác Nhận Mật Khẩu",
+    "Button1": "Đăng Ký",
+    "Button2": "Đăng Nhập"
+  },
+
+  "profile": {
+    "Name": "Tên: ",
+    "Phone": "Số Điện Thoại: ",
+
+    "Modal1": {
+      "Title": "Đổi Thông Tin",
+      "HeaderTitle": "ĐỔI THÔNG TIN",
+      "SubTitle": "Thông Tin Cá Nhân",
+      "Input1": "SĐT",
+      "Input2": "Tên",
+      "Button": "Gửi đi"
+    },
+    "Modal2": {
+      "Title": "Đổi Mật Khẩu",
+      "HeaderTitle": "ĐỔI MẬT KHẨU",
+      "SubTitle": "Đổi Mật Khẩu",
+      "Input1": "Mật Khẩu Cũ",
+      "Input2": "Mật Khẩu Mới"
+    }
+  },
+
+  "cart": {
+    "Banner1": {
+      "Title1": "TRANG GIỎ HÀNG",
+      "Title2": "GIỎ HÀNG CỦA BẠN",
+      "Title3": "Giỏ Hàng Trống"
+    },
+
+    "Banner2": {
+      "Title1": "Tổng Tiền",
+      "Title2": "Tạm Tính",
+      "Title3": "Vận Chuyển",
+      "Title4": "TỔNG",
+      "Button": "Thanh Toán"
+    },
+
+    "CartInfo": {
+      "Title1": "Ảnh",
+      "Title2": "Tên Sản Phẩm",
+      "Title3": "Khối Lượng",
+      "Title4": "Giá",
+      "Title5": "Số Lượng",
+      "Title6": "Tổng"
+    }
+  },
+
+  "checkout": {
+    "HeaderTiltle": "Chi Tiết Hóa Đơn",
+    "SubTitle1": "Địa Chỉ Giao Hàng",
+    "SubTitle2": "Danh Sách Sản Phẩm",
+    "Banner1": {
+      "Title1": "TRANG THANH TOÁN",
+      "Title2": "THANH TOÁN"
+    },
+
+    "Banner2": {
+      "Title1": "Tổng Tiền",
+      "Title2": "Tạm Tính",
+      "Title3": "Vận Chuyển",
+      "Title4": "TỔNG"
+    },
+
+    "Banner3": {
+      "Title": "Phương Thức Thanh Toán",
+      "Button": "Đặt Hàng"
+    },
+
+    "CartInfo": {
+      "Title1": "Ảnh",
+      "Title2": "Tên Sản Phẩm",
+      "Title3": "Khối Lượng",
+      "Title4": "Giá",
+      "Title5": "Số Lượng",
+      "Title6": "Tổng"
+    }
+  },
+
+  "order": {
+    "Title1": "Chờ Xác Nhận",
+    "Title2": "Chờ Lấy Hàng",
+    "Title3": "Đang Giao Hàng",
+    "Title4": "Đã Giao hàng",
+    "Title5": "Hủy",
+
+    "Modal": {
+      "HeaderTitle": "Chi Tiết Đơn Hàng",
+      "Title1": "Số Lượng: ",
+      "Title2": "Khối Lượng: ",
+      "Title3": "Giá: ",
+      "Title4": "Đánh Giá: ",
+      "Input": "Nhận Xét",
+      "Button": "Gửi đi"
+    },
+    "OrderDetail": {
+      "HeaderTitle": "Mã Đơn Hàng: ",
+      "Title1": "Địa Chỉ: ",
+      "Title2": "Tổng Tiền: ",
+      "Title3": "Loại Thanh Toán: ",
+      "Button": "Hủy",
+      "Button2": "Chuyển"
+    },
+
+    "Rating": {
+      "Level1": "Quá Tệ",
+      "Level2": "Quá Tệ+",
+      "Level3": "Tệ",
+      "Level4": "Tệ+",
+      "Level5": "Bình Thường",
+      "Level6": "Bình Thường+",
+      "Level7": "Tuyệt",
+      "Level8": "Tuyệt+",
+      "Level9": "Xuất Sắc",
+      "Level10": "Xuất Sắc+"
+    }
+  },
+
+  "admin": {
+    "Analytics": {
+      "TimeEnd": "Thời Gian Kết Thúc",
+      "ChartTitle1": "Tổng Đơn Trong 7 Ngày",
+      "ChartTitle2": "Tổng Tiền Trong 7 Ngày",
+      "ChartTitle3": "Sản Phẩm Phổ Biến Nhất",
+      "SubTitle1": "Tổng Đơn",
+      "SubTitle2": "Tổng Tiền",
+      "Caption1": "Đơn Hàng",
+      "Caption2": "Tiền"
+    },
+
+    "CreateProduct": {
+      "HeaderTitle": "THÊM SẢN PHẨM",
+      "HeaderTitle2": "CẬP NHẬT SẢN PHẨM",
+      "Title1": "Tên",
+      "Title2": "Giá",
+      "Title3": "Khối Lượng",
+      "Title4": "Số Lượng",
+      "Title5": "Chi Tiết SP",
+      "Title6": "Loại SP",
+      "Button": "Gửi Đi",
+      "Modal": {
+        "HeaderTitle": "THÊM LOẠI SẢN PHẨM",
+        "Title1": "Tên",
+        "Button": "Gửi Đi"
+      }
+    },
+
+    "UserManagement": {
+      "Button1": "Khách Hàng",
+      "Button2": "Nhân Viên",
+      "Title": "SĐT"
+    }
+  }
+}
