@@ -16,22 +16,22 @@
 ●	Tạo file .env bằng cấp với folder .env
 	- Thêm các thuộc tính: 
 ```
-	  ACCESS_TOKEN_SECRET= ( một mã bí mật để tạo token)
-	  JWT_KEY= ( một key để mã hóa và giải mã jwt)
-	  MONGO_URI= ( link database)
-   	PORT= 3005
-  	BUCKET = ( Tạo một bucket ở aws sẽ có các thuộc tính bucket)
-  	REGION = ( Lấy thuộc tính region trong bucket mới tạo ở trên)
-  	AWS_ACCESS_KEY = ( Lấy thuộc tính access key trong bucket mới tạo ở trên)
-	  AWS_SECRET_KEY = ( Lấy thuộc tính secret key trong bucket mới tạo ở trên)
-	  Email = (Email để gửi dùng email cho các tài khoản user)
-	  Password = (Password của email)
-	  ID_Client= ( Tạo tài khoản Paypal sandbox để lấy thuộc tính ID_Client)
-  	Secret= ( Lấy thuộc tính Secret khi tạo tài khoản paypal sandbox)
-	  API_GHTK= ( Đăng ký tài khoản Giao hàng tiết kiệm để lấy mã api của GHTK)
-	  Account_SID= ( Đăng ký tài khoản twillo để có được thuộc tính accoun Account_SID)
-	  Auth_Token= ( Lấy thuộc tính AuthToken sau khi tạo xong tài khoản twillo)
-  	Phone=( Sau khi tạo xong tài khoản đăng ký số điện thoại để gửi sms về cho điện thoại )
+	ACCESS_TOKEN_SECRET= ( một mã bí mật để tạo token)
+	JWT_KEY= ( một key để mã hóa và giải mã jwt)
+	MONGO_URI= ( link database)
+	PORT= 3005
+	BUCKET = ( Tạo một bucket ở aws sẽ có các thuộc tính bucket)
+	REGION = ( Lấy thuộc tính region trong bucket mới tạo ở trên)
+	AWS_ACCESS_KEY = ( Lấy thuộc tính access key trong bucket mới tạo ở trên)
+	AWS_SECRET_KEY = ( Lấy thuộc tính secret key trong bucket mới tạo ở trên)
+	Email = (Email để gửi dùng email cho các tài khoản user)
+	Password = (Password của email)
+	ID_Client= ( Tạo tài khoản Paypal sandbox để lấy thuộc tính ID_Client)
+	Secret= ( Lấy thuộc tính Secret khi tạo tài khoản paypal sandbox)
+	API_GHTK= ( Đăng ký tài khoản Giao hàng tiết kiệm để lấy mã api của GHTK)
+	Account_SID= ( Đăng ký tài khoản twillo để có được thuộc tính accoun Account_SID)
+	Auth_Token= ( Lấy thuộc tính AuthToken sau khi tạo xong tài khoản twillo)
+	Phone=( Sau khi tạo xong tài khoản đăng ký số điện thoại để gửi sms về cho điện thoại )
 ```
 ●	 Mở terminal chạy lệnh yarn để cài toàn bộ thư viện
 
