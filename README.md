@@ -15,6 +15,7 @@
 
 ●	Tạo file .env bằng cấp với folder .env
 	- Thêm các thuộc tính: 
+```
 	  ACCESS_TOKEN_SECRET= ( một mã bí mật để tạo token)
 	  JWT_KEY= ( một key để mã hóa và giải mã jwt)
 	  MONGO_URI= ( link database)
@@ -31,7 +32,7 @@
 	  Account_SID= ( Đăng ký tài khoản twillo để có được thuộc tính accoun Account_SID)
 	  Auth_Token= ( Lấy thuộc tính AuthToken sau khi tạo xong tài khoản twillo)
   	Phone=( Sau khi tạo xong tài khoản đăng ký số điện thoại để gửi sms về cho điện thoại )
-
+```
 ●	 Mở terminal chạy lệnh yarn để cài toàn bộ thư viện
 
 ●	Chạy lệnh yarn dev để chạy source
