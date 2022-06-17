@@ -19,7 +19,6 @@ class _DrawerLayoutState extends State<DrawerLayout> {
   @override
   void initState() {
     super.initState();
-    print(_groupProduct.selected);
   }
 
   @override

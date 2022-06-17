@@ -1,6 +1,7 @@
 import 'package:freshfood/src/app.dart';
 import 'package:freshfood/src/pages/Admin/add_staff_page.dart';
 import 'package:freshfood/src/pages/Admin/edit_product_page.dart';
+import 'package:freshfood/src/pages/Admin/manager_discount.dart';
 import 'package:freshfood/src/pages/Admin/manager_product_page.dart';
 import 'package:freshfood/src/pages/Admin/manager_staff.dart';
 import 'package:freshfood/src/pages/Admin/manager_user.dart';
@@ -12,6 +13,7 @@ import 'package:freshfood/src/pages/address/address_page.dart';
 import 'package:freshfood/src/pages/address/edit_address_page.dart';
 import 'package:freshfood/src/pages/address/update_address_page.dart';
 import 'package:freshfood/src/pages/address/update_address_page_detail.dart';
+import 'package:freshfood/src/pages/answer/answer_page.dart';
 import 'package:freshfood/src/pages/authentication/authentication_page.dart';
 import 'package:freshfood/src/pages/authentication/change_password.dart';
 import 'package:freshfood/src/pages/authentication/change_password_with_otp_page.dart';
@@ -21,9 +23,14 @@ import 'package:freshfood/src/pages/authentication/pages/login_page.dart';
 import 'package:freshfood/src/pages/cart/cart_page.dart';
 import 'package:freshfood/src/pages/chat/chat_detail_page.dart';
 import 'package:freshfood/src/pages/chat/chat_page.dart';
+import 'package:freshfood/src/pages/discount/apply_discount_page.dart';
+import 'package:freshfood/src/pages/discount/create_discount_screen.dart';
 import 'package:freshfood/src/pages/eveluate/eveluate_page.dart';
 import 'package:freshfood/src/pages/eveluate/eveluate_product_page.dart';
 import 'package:freshfood/src/pages/home/home_page.dart';
+import 'package:freshfood/src/pages/inventory/create_inventory_history_page.dart';
+import 'package:freshfood/src/pages/inventory/detail_manager_inventory_page.dart';
+import 'package:freshfood/src/pages/inventory/manager_inventory_page.dart';
 import 'package:freshfood/src/pages/order/order_detail_page.dart';
 import 'package:freshfood/src/pages/order/order_history_page.dart';
 import 'package:freshfood/src/pages/order/order_page.dart';
@@ -37,6 +44,9 @@ import 'package:freshfood/src/pages/products/create_product_screen.dart';
 import 'package:freshfood/src/pages/products/detail_product_screen.dart';
 import 'package:freshfood/src/pages/products/product_screen.dart';
 import 'package:freshfood/src/pages/profile/profile_page.dart';
+import 'package:freshfood/src/pages/question/create_question_page.dart';
+import 'package:freshfood/src/pages/question/group_question_page.dart';
+import 'package:freshfood/src/pages/question/question_page.dart';
 import 'package:get/get.dart';
 part 'app_routes.dart';
 
@@ -340,6 +350,80 @@ class AppPages {
     GetPage(
       name: Routes.CHANGE_PASSWORD,
       page: () => ChangePasswordPage(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 100),
+      children: [],
+    ),
+    GetPage(
+      name: Routes.MANAGER_DISCOUNT,
+      page: () => ManagerDiscount(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 100),
+      children: [],
+    ),
+    GetPage(
+      name: Routes.CREATE_DISCOUNT,
+      page: () => CreateDiscountPage(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 100),
+      children: [],
+    ),
+    GetPage(
+      name: Routes.APPLY_DISCOUNT,
+      page: () => ApplyDiscountPage(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 100),
+      children: [],
+    ),
+    GetPage(
+      name: Routes.CREATE_QUESTION,
+      page: () => CreateQuestionPage(
+        idGroup: Get.arguments['idGroup'],
+        question: Get.arguments['question'],
+      ),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 100),
+      children: [],
+    ),
+    GetPage(
+      name: Routes.MANAGER_GROUP_QUESTION,
+      page: () => ManagerGroupQuestion(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 100),
+      children: [],
+    ),
+    GetPage(
+      name: Routes.MANAGER_QUESTION,
+      page: () => QuestionPage(idGroup: Get.arguments['idGroup']),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 100),
+      children: [],
+    ),
+    GetPage(
+      name: Routes.ANSWER_PAGE,
+      page: () => AnswerPage(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 100),
+      children: [],
+    ),
+    GetPage(
+      name: Routes.MANAGER_INVENTORY_HISTORY,
+      page: () => ManagerInventoryHistory(),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 100),
+      children: [],
+    ),
+    GetPage(
+      name: Routes.DETAIL_MANAGER_INVENTORY_HISTORY,
+      page: () => DetailManagerInventoryHistory(
+          inventoryHistory: Get.arguments['inventoryHistory']),
+      transition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 100),
+      children: [],
+    ),
+    GetPage(
+      name: Routes.CREATE_INVENTORY_HISTORY,
+      page: () => CreateInventoryHistoryPage(),
       transition: Transition.rightToLeft,
       transitionDuration: Duration(milliseconds: 100),
       children: [],

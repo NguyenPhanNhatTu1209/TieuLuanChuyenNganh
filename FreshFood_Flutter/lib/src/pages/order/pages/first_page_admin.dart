@@ -80,20 +80,17 @@ class WidgetOrder extends StatelessWidget {
                       Get.toNamed(Routes.DETAIL_ORDER,
                           arguments: {"order": order});
 
-                      print(order);
                     },
                     child: Row(
                       children: [
                         SizedBox(
                           width: 10.sp,
                         ),
-                        CachedNetworkImage(
-                          imageUrl: order.product[0].image[0],
+                        Image.network(
+                          order.product[0].image[0],
                           fit: BoxFit.cover,
                           height: 70.sp,
                           width: 70.sp,
-                          errorWidget: (context, url, error) =>
-                              Icon(Icons.error),
                         ),
                         SizedBox(
                           width: 20.sp,

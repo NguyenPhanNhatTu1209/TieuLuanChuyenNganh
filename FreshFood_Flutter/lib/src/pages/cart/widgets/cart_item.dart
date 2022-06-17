@@ -118,11 +118,6 @@ class _CartItem extends State<CartItem> {
                     children: <Widget>[
                       CartItemButton(PhosphorIcons.minus, () {
                         widget.cartController.decreaseQuantity(widget.index);
-
-                        // setState(() {
-                        //   widget.cart.decrementQuantity();
-                        //   widget.cartController.getTotalMoney();
-                        // });
                       }),
                       SizedBox(width: 1.w),
 
@@ -142,10 +137,6 @@ class _CartItem extends State<CartItem> {
                       SizedBox(width: 1.w),
                       CartItemButton(PhosphorIcons.plus, () {
                         widget.cartController.increaseQuantity(widget.index);
-                        // setState(() {
-                        //   widget.cart.incrementQuantity();
-                        //   widget.cartController.getTotalMoney();
-                        // });
                       }),
                       // CartItemButton(
                       //     PhosphorIcons.trash, () => cartController.deleteItem(this.cartItem)),

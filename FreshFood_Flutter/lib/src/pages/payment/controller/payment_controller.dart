@@ -1,10 +1,7 @@
 import 'package:freshfood/src/models/cart_model.dart';
-import 'package:freshfood/src/pages/cart/controller/cart_controller.dart';
+import 'package:freshfood/src/providers/user_provider.dart';
 import 'package:freshfood/src/repository/order_repository.dart';
-import 'package:freshfood/src/routes/app_pages.dart';
-import 'package:freshfood/src/utils/snackbar.dart';
 import 'package:get/get.dart';
-
 import 'addressController.dart';
 
 class PaymentController extends GetxController {
@@ -13,6 +10,8 @@ class PaymentController extends GetxController {
   double productPrice = 0;
   int methodPayment = 0;
   List<CartModel> list = [];
+  double usePoint = 0;
+  bool isUsePoint = false;
   String note = '';
   double getproductPrice(List<CartModel> list) {
     productPrice = 0;
@@ -24,6 +23,13 @@ class PaymentController extends GetxController {
 
   initPaymentController(List<CartModel> listProduct) {
     list = listProduct;
+    usePoint = 0;
+  }
+
+  changeStatusUsePoint() {
+    isUsePoint = !isUsePoint;
+    isUsePoint ? total -= usePoint : total += usePoint;
+    update();
   }
 
   String getPaymentMethod() {
@@ -48,13 +54,13 @@ class PaymentController extends GetxController {
     update();
   }
 
-  getMoney() {
+  getMoney() async {
     final addressController = Get.put(AddressController());
     double weight = 0;
     list.forEach((element) {
       weight += element.weight;
     });
-    OrderRepository()
+    await OrderRepository()
         .getShipFee(
             address: addressController.addressSelected.address,
             province: addressController.addressSelected.province,
@@ -63,74 +69,20 @@ class PaymentController extends GetxController {
         .then((value) {
       transportFee = double.parse(value.toString());
       total = transportFee + productPrice;
+      isUsePoint = false;
+      calculatePoint();
       update();
     });
   }
 
-  createOrder(List<CartModel> list, bool isBuyNow) {
-    final addressController = Get.put(AddressController());
-    if (addressController.addressSelected != null) {
-      List<String> id = list.map((value) => value.id).toList();
-      if (isBuyNow == false) {
-        OrderRepository()
-            .createOrder(
-                cartId: id,
-                address: addressController.addressSelected,
-                note: note,
-                typePaymentOrder: methodPayment)
-            .then((value) {
-          Get.back();
-          print(value['link']);
-          final cartController = Get.put(CartController());
-          cartController.getListProduct();
-          var temp = methodPayment;
-          methodPayment = 0;
-          if (temp != 0) {
-            Get.toNamed(Routes.PAYMENT_WEB_PAGE,
-                arguments: {"link": value['link']});
-          } else {
-            Get.offAllNamed(Routes.ROOT);
-            GetSnackBar getSnackBar = GetSnackBar(
-              title: 'Tạo đơn hàng thành công',
-              subTitle: 'Bạn có thể theo dõi quá trình vận đơn tại mục Xem đơn',
-            );
-            getSnackBar.show();
-          }
-        });
-      } else {
-        OrderRepository()
-            .createOrderBuyNow(
-                productId: list[0].id,
-                quantity: list[0].quantity,
-                address: addressController.addressSelected,
-                note: note,
-                typePaymentOrder: methodPayment)
-            .then((value) {
-          print(value['link']);
-          final cartController = Get.put(CartController());
-          cartController.getListProduct();
-          var temp = methodPayment;
-          methodPayment = 0;
-          if (temp != 0) {
-            Get.toNamed(Routes.PAYMENT_WEB_PAGE,
-                arguments: {"link": value['link']});
-          } else {
-            Get.offAllNamed(Routes.ROOT);
-            GetSnackBar getSnackBar = GetSnackBar(
-              title: 'Tạo đơn hàng thành công',
-              subTitle: 'Bạn có thể theo dõi quá trình vận đơn tại mục Xem đơn',
-            );
-            getSnackBar.show();
-          }
-        });
-      }
+  calculatePoint() {
+    if (userProvider.user.point == null || userProvider.user.point == 0) return;
+
+    var temp = total / 2;
+    if (temp > userProvider.user.point) {
+      usePoint = userProvider.user.point.toDouble();
     } else {
-      Get.back();
-      GetSnackBar getSnackBar = GetSnackBar(
-        title: 'Tạo đơn hàng thất bại',
-        subTitle: 'Vui lòng chọn địa chỉ nhận hàng!',
-      );
-      getSnackBar.show();
+      usePoint = temp;
     }
   }
 }

@@ -33,10 +33,6 @@ class SocketEmit {
   }
 
   void sendMessage(dynamic message) {
-    print("tin nhan gui nek");
-    print({
-      "message": message,
-    });
     socket.emit('SEND_MESSAGE_CSS', {
       "message": message,
     });
@@ -44,11 +40,6 @@ class SocketEmit {
 
   void sendDeviceInfo() async {
     List<String> infos = await getDeviceDetails();
-    print({
-      "deviceUUid": infos[2],
-      "deviceModel": infos[0],
-      "appVersion": infos[3],
-    });
     socket.emit('UPDATE_DEVICE_CSS', {
       "deviceUUid": infos[2],
       "deviceModel": infos[0],

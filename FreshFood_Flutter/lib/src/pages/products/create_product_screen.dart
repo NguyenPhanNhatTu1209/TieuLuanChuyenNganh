@@ -10,8 +10,11 @@ import 'package:freshfood/src/models/group_product.dart';
 import 'package:freshfood/src/pages/home/controllers/product_controller.dart';
 import 'package:freshfood/src/pages/products/controllers/group_product_controller.dart';
 import 'package:freshfood/src/pages/products/widget/drawer_layout.dart';
+import 'package:freshfood/src/public/constant.dart';
 import 'package:freshfood/src/public/styles.dart';
 import 'package:freshfood/src/repository/product_repository.dart';
+import 'package:freshfood/src/routes/app_pages.dart';
+import 'package:freshfood/src/services/upload_storage.dart';
 import 'package:freshfood/src/utils/snackbar.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -73,10 +76,17 @@ class _CreateProductPageState extends State<CreateProductPage> {
     );
   }
 
-  void createProduct() {
+  Future<void> createProduct() async {
+    List<String> listImage = [];
+    for (var element in _image) {
+      String url =
+          await StorageService().uploadImageToStorage(element, folderProduct);
+      listImage.add(url);
+    }
+
     ProductRepository()
         .createProduct(
-      images: _image,
+      images: listImage,
       weight: weight,
       price: price,
       quantity: quantity,
@@ -93,8 +103,7 @@ class _CreateProductPageState extends State<CreateProductPage> {
         );
         getSnackBar.show();
       } else {
-        productController.initialController();
-        productController.getAllProduct();
+        Get.offAndToNamed(Routes.ADMIN_MANAGER_PRODUCT);
         GetSnackBar getSnackBar = GetSnackBar(
           title: 'Tạo thành công',
           subTitle: 'Tạo thành công sản phẩm',
@@ -467,6 +476,18 @@ class _CreateProductPageState extends State<CreateProductPage> {
                             borderRadius: BorderRadius.circular(20)),
                         onPressed: () {
                           if (_formKey.currentState.validate()) {
+                            showDialog(
+                                context: context,
+                                builder: (context) {
+                                  return Center(
+                                    child: CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                          Colors.white),
+                                    ),
+                                  );
+                                },
+                                barrierColor: Color(0x80000000),
+                                barrierDismissible: false);
                             createProduct();
                           }
                         },
@@ -508,7 +529,6 @@ class _CreateProductPageState extends State<CreateProductPage> {
             else if (type == "detail")
               detail = val.trim();
             else if (type == "price") {
-              // print(name_controller.numberValue);
               // // name_controller.updateValue(val);
               // if(name_controller.toString())
               if (name_controller.text.toString() == "đ") {

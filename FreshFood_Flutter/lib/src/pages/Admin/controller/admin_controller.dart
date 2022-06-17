@@ -65,9 +65,7 @@ class AdminController extends GetxController {
     String timeEnd = '${dateEnd.year}-${dateEnd.month}-${dateEnd.day}';
     AdminRepository().getstatisticOrder(timeStart, timeEnd).then((value) {
       if (value.isNotEmpty) {
-        print(value.length);
         // listOrderNumber = makeGroupData(value);
-        // print(listOrderNumber.length);
         // update();
         final Color leftBarColor = const Color(0xff53fdd7);
         final Color rightBarColor = const Color(0xffff5182);
@@ -79,13 +77,10 @@ class AdminController extends GetxController {
             FlSpot(double.parse(i.toString()),
                 double.parse(value[i]['totalMoney'].toString())),
           );
-          print('otrongne');
           update();
         }
         // value.forEach((element) {});
-        print(listOrderNumber.length);
         update();
-        print('end');
       }
     });
   }
@@ -99,9 +94,7 @@ class AdminController extends GetxController {
 
   statisticUser(String id) {
     AdminRepository().getStatisticUser(id).then((value) {
-      print("value ne");
 
-      print(value);
       resultStatisticUser = value;
       update();
     });

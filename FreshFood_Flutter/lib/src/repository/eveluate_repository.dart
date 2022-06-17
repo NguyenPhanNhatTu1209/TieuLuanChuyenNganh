@@ -21,7 +21,6 @@ class EveluateRepository {
   }
 
   Future<dynamic> createEveluate({List<Map<String, dynamic>> product}) async {
-    print(jsonEncode(product));
     var response =
         await HandleApis().postArray(ApiGateway.CREATE_EVELUATE, product);
     print(response.body);

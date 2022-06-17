@@ -322,9 +322,6 @@ class _UpdateAddressPageDetailState extends State<UpdateAddressPageDetail> {
                             _addressController.text,
                             isMain)
                         .then((value) {
-                      print("value");
-
-                      print(widget.address.id);
 
                       if (value == true) {
                         addressController.getAllAddress();

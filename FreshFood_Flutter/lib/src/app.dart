@@ -1,10 +1,13 @@
 import 'package:freshfood/src/pages/Admin/manager_product_page.dart';
 import 'package:freshfood/src/pages/Admin/manager_user.dart';
+import 'package:freshfood/src/pages/answer/answer_page.dart';
 import 'package:freshfood/src/pages/authentication/authentication_page.dart';
 import 'package:freshfood/src/pages/cart/cart_page.dart';
+import 'package:freshfood/src/pages/discount/apply_discount_page.dart';
 import 'package:freshfood/src/pages/home/home_page.dart';
 import 'package:freshfood/src/pages/navigation/navigation.dart';
 import 'package:freshfood/src/pages/order/order_page_admin.dart';
+import 'package:freshfood/src/pages/question/group_question_page.dart';
 import 'package:freshfood/src/providers/user_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -23,7 +26,6 @@ class _AppState extends State<App> with WidgetsBindingObserver {
   void initState() {
     AdminRepository().getAvatar().then((value) {
       avatarAdmin = value['avatar'];
-      print(avatarAdmin);
     });
     WidgetsBinding.instance.addObserver(this);
     SystemChrome.setPreferredOrientations([
@@ -48,5 +50,6 @@ class _AppState extends State<App> with WidgetsBindingObserver {
                 ? ManagerProductPage()
                 : OrderPageAdmin()
         : AuthenticationPages();
+    // return ApplyDiscountPage();
   }
 }

@@ -14,6 +14,9 @@ class OrderModel {
   int status;
   String orderCode;
   double totalMoney;
+  double discountMoney;
+  double bonusMoney;
+  double totalMoneyProduct;
   double shipFee;
   String typePayment;
   String address;
@@ -37,6 +40,9 @@ class OrderModel {
     this.updatedAt,
     this.area,
     this.checkEveluate,
+    this.bonusMoney,
+    this.discountMoney,
+    this.totalMoneyProduct,
   });
 
   OrderModel copyWith({
@@ -53,6 +59,9 @@ class OrderModel {
     DateTime createdAt,
     DateTime updatedAt,
     AddressModel area,
+    double discountMoney,
+    double bonusMoney,
+    double totalMoneyProduct,
   }) {
     return OrderModel(
       id: id ?? this.id,
@@ -68,6 +77,9 @@ class OrderModel {
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
       area: area ?? this.area,
+      discountMoney: discountMoney ?? this.discountMoney,
+      bonusMoney: bonusMoney ?? this.bonusMoney,
+      totalMoneyProduct: totalMoneyProduct ?? this.totalMoneyProduct,
     );
   }
 
@@ -86,6 +98,9 @@ class OrderModel {
       'createdAt': createdAt.millisecondsSinceEpoch,
       'updatedAt': updatedAt.millisecondsSinceEpoch,
       'area': area.toMap(),
+      'totalMoneyProduct': totalMoneyProduct,
+      'bonusMoney': bonusMoney,
+      'discountMoney': discountMoney,
     };
   }
 
@@ -99,6 +114,10 @@ class OrderModel {
       status: map['status'],
       orderCode: map['orderCode'],
       totalMoney: double.tryParse((map['totalMoney'] ?? 0).toString()),
+      discountMoney: double.tryParse((map['discountMoney'] ?? 0).toString()),
+      bonusMoney: double.tryParse((map['bonusMoney'] ?? 0).toString()),
+      totalMoneyProduct:
+          double.tryParse((map['totalMoneyProduct'] ?? 0).toString()),
       shipFee: double.tryParse((map['shipFee'] ?? 0).toString()),
       typePayment: map['typePayment'],
       address: map['address'],

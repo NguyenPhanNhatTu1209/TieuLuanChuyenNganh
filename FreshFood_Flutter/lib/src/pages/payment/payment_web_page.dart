@@ -24,8 +24,6 @@ class _PaymentWebPageState extends State<PaymentWebPage> {
   void initState() {
     super.initState();
     if (Platform.isAndroid) WebView.platform = SurfaceAndroidWebView();
-    print("nhattu");
-    print(widget.link);
   }
 
   @override
@@ -42,8 +40,6 @@ class _PaymentWebPageState extends State<PaymentWebPage> {
           _controller = controller;
         },
         onPageFinished: (url) {
-          print("linkurl");
-          print(url);
           if (url
               .toLowerCase()
               .startsWith('$baseUrl/user/successPayPal'.toLowerCase())) {

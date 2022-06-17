@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1009832609384-q7kc7s3psr50jmdb6v04o7cpvuh0gs78.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.freshfood",
+            "certificate_hash": "c89a55cc73e5caa351dcccbee87e9781def4ea62"
+          }
+        },
+        {
           "client_id": "1009832609384-m2vsgee2pc9dvqe1dvpi2v0vo5bh4oi3.apps.googleusercontent.com",
           "client_type": 3
         }

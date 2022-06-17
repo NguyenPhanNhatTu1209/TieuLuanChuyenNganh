@@ -17,7 +17,6 @@ class CartController extends GetxController {
       StreamController<List<dynamic>>.broadcast();
   initialController() {
     listProductCart = [];
-    print("testne");
   }
 
   getTotalMoney() {
@@ -36,8 +35,6 @@ class CartController extends GetxController {
     listProductCart.forEach((element) {
       if (element['status'] == 1) temp += element['quantity'];
     });
-    print("halo");
-    print(temp);
     totalQuantity = temp.toString();
     update();
   }
@@ -66,12 +63,9 @@ class CartController extends GetxController {
   }
 
   increaseQuantity(index) {
-    // if(listProductCart[index]['quantity'] )
-    // {
     listProductCart[index]['quantity']++;
     getTotalMoney();
     getTotalQuantity();
-    // }
   }
 
   decreaseQuantity(index) {
@@ -117,7 +111,6 @@ class CartController extends GetxController {
       getTotalQuantity();
       print(value);
       if (value.isNotEmpty) {
-        print("updatecartthanhcong1");
       }
     });
   }

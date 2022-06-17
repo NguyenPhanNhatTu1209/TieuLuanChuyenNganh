@@ -29,10 +29,8 @@ class OrderRepository {
       headers: {'Token': '83b5796301Fc00A131eb690fA9d8B9B5cCf0497b'},
     );
     if (response.statusCode == 200) {
-      print(response.body);
       return jsonDecode(response.body)['fee']['fee'];
     }
-    print(response.statusCode);
     return null;
   }
 
@@ -40,7 +38,9 @@ class OrderRepository {
       {List<String> cartId,
       AddressModel address,
       String note,
-      int typePaymentOrder}) async {
+      int typePaymentOrder,
+      String idDiscount,
+      double bonusMoney}) async {
     var body = {
       "cartId": cartId,
       "area": {
@@ -48,29 +48,30 @@ class OrderRepository {
         "phone": address.phone,
         "province": address.province,
         "district": address.district,
-        "address": address.address
+        "address": address.address,
       },
       "note": note,
-      "typePaymentOrder": typePaymentOrder
+      "typePaymentOrder": typePaymentOrder,
+      "idDiscount": idDiscount,
+      "bonusMoney": bonusMoney,
     };
     var response = await HandleApis().post(ApiGateway.CREATE_ORDER, body);
-    print(jsonEncode(body));
 
-    print("chonayne");
-
-    print(response.statusCode);
     if (response.statusCode == 200) {
       return jsonDecode(response.body)['data'];
     }
     return [];
   }
 
-  Future<dynamic> createOrderBuyNow(
-      {String productId,
-      int quantity,
-      AddressModel address,
-      String note,
-      int typePaymentOrder}) async {
+  Future<dynamic> createOrderBuyNow({
+    String productId,
+    int quantity,
+    AddressModel address,
+    String note,
+    int typePaymentOrder,
+    String idDiscount,
+    double bonusMoney,
+  }) async {
     var body = {
       "productId": productId,
       "quantity": quantity,
@@ -82,15 +83,12 @@ class OrderRepository {
         "address": address.address
       },
       "note": note,
-      "typePaymentOrder": typePaymentOrder
+      "typePaymentOrder": typePaymentOrder,
+      "idDiscount": idDiscount,
+      "bonusMoney": bonusMoney,
     };
     var response =
         await HandleApis().post(ApiGateway.CREATE_ORDER_BUY_NOW, body);
-    print(jsonEncode(body));
-
-    print("chonayne");
-
-    print(response.statusCode);
     if (response.statusCode == 200) {
       return jsonDecode(response.body)['data'];
     }
@@ -114,7 +112,6 @@ class OrderRepository {
       ApiGateway.GET_ORDER,
       'search=$search&status=$status&skip=$skip&limit=$limit',
     );
-    print(response.statusCode);
     if (response.statusCode == 200) {
       return jsonDecode(response.body)['data'];
     }
@@ -139,7 +136,6 @@ class OrderRepository {
       ApiGateway.GET_ORDER_ADMIN,
       'search=$search&status=$status&skip=$skip&limit=$limit',
     );
-    print(response.body);
     if (response.statusCode == 200) {
       return jsonDecode(response.body)['data'];
     }
@@ -155,16 +151,12 @@ class OrderRepository {
       "id": id,
       "status": status,
     };
-    print('body:');
-    print(body);
 
     var response = await HandleApis().put(
       ApiGateway.UPDATE_STATUS_ORDER,
       body,
     );
-    print('response:');
 
-    print(response.body);
     if (response.statusCode == 200) {
       return true;
     }

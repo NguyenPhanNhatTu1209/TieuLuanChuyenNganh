@@ -1,19 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:freshfood/src/models/cart_model.dart';
 import 'package:freshfood/src/models/product.dart';
 import 'package:freshfood/src/pages/Admin/widget/drawer_layout_admin.dart';
 import 'package:freshfood/src/pages/Admin/widget/product_item.dart';
-import 'package:freshfood/src/pages/cart/controller/cart_controller.dart';
-import 'package:freshfood/src/pages/cart/widgets/cart_item.dart';
-import 'package:freshfood/src/pages/cart/widgets/cart_item_button.dart';
 import 'package:freshfood/src/pages/home/controllers/product_controller.dart';
-import 'package:freshfood/src/public/styles.dart';
 import 'package:freshfood/src/routes/app_pages.dart';
 import 'package:freshfood/src/services/fcm.dart';
 import 'package:freshfood/src/services/socket.dart';
-import 'package:freshfood/src/utils/snackbar.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 

@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:freshfood/src/models/product.dart';
 import 'package:freshfood/src/pages/products/controllers/group_product_controller.dart';
 import 'package:freshfood/src/pages/products/widget/product_card.dart';
-import 'package:freshfood/src/pages/home/components/recoment_product.dart';
-import 'package:freshfood/src/pages/home/components/title_with_button_more.dart';
 import 'package:freshfood/src/pages/home/controllers/product_controller.dart';
 import 'package:freshfood/src/pages/products/widget/drawer_layout.dart';
 import 'package:freshfood/src/public/styles.dart';

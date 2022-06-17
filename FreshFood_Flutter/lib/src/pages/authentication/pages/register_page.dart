@@ -4,7 +4,6 @@ import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:freshfood/src/models/user.dart';
 import 'package:freshfood/src/providers/user_provider.dart';
 import 'package:freshfood/src/repository/authentication_repository.dart';
-import 'package:freshfood/src/routes/app_pages.dart';
 import 'package:freshfood/src/utils/snackbar.dart';
 import 'package:get/get.dart';
 

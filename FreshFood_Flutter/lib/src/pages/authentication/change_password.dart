@@ -170,7 +170,6 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                                   .then((value) {
                                 Get.back();
                                 if (value == false) {
-                                  print(value);
                                   GetSnackBar getSnackBar = GetSnackBar(
                                     title: 'Đổi mật khẩu thất bại!',
                                     subTitle: 'Sai mật khẩu cũ',

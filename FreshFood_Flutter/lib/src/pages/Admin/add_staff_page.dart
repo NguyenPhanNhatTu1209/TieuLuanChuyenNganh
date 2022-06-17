@@ -195,7 +195,6 @@ class _CreateStaffPageState extends State<CreateStaffPage> {
                                   .then((value) {
                                 Get.back();
                                 if (value == null) {
-                                  print(value);
                                   GetSnackBar getSnackBar = GetSnackBar(
                                     title: 'Tạo nhân viên thất bại',
                                     subTitle: 'Email đã được đăng kí.',

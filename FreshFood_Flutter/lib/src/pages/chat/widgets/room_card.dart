@@ -19,8 +19,6 @@ class _RoomCardState extends State<RoomCard> {
   @override
   void initState() {
     super.initState();
-    print(widget.room.seenByUser
-        .contains(Provider.of<UserProvider>(context, listen: false).user.id));
   }
 
   @override

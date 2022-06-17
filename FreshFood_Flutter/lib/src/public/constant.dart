@@ -11,3 +11,6 @@ const listDefaultImage = [
   'assets/images/banner/hinh4.webp',
   'assets/images/banner/hinh5.jpg',
 ];
+
+const folderAvatar = 'Avatar';
+const folderProduct = 'Product';

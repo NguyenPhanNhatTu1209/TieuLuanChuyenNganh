@@ -10,6 +10,7 @@ class ProductModel {
   int status;
   double weight;
   double price;
+  double priceDiscount;
   int quantity;
   String name;
   String detail;
@@ -32,7 +33,8 @@ class ProductModel {
       this.number = 1,
       this.starAVG,
       this.eveluateCount,
-      this.sold});
+      this.sold,
+      this.priceDiscount});
 
   ProductModel copyWith(
       {String id,
@@ -47,21 +49,24 @@ class ProductModel {
       int number,
       int starAVG,
       int eveluateCount,
-      int sold}) {
+      int sold,
+      double priceDiscount}) {
     return ProductModel(
-        id: id ?? this.id,
-        image: image ?? this.image,
-        status: status ?? this.status,
-        weight: weight ?? this.weight,
-        price: price ?? this.price,
-        quantity: quantity ?? this.quantity,
-        name: name ?? this.name,
-        detail: detail ?? this.detail,
-        groupProduct: groupProduct ?? this.groupProduct,
-        number: number ?? this.number,
-        starAVG: starAVG ?? this.starAVG,
-        eveluateCount: eveluateCount ?? this.eveluateCount,
-        sold: sold ?? this.sold);
+      id: id ?? this.id,
+      image: image ?? this.image,
+      status: status ?? this.status,
+      weight: weight ?? this.weight,
+      price: price ?? this.price,
+      quantity: quantity ?? this.quantity,
+      name: name ?? this.name,
+      detail: detail ?? this.detail,
+      groupProduct: groupProduct ?? this.groupProduct,
+      number: number ?? this.number,
+      starAVG: starAVG ?? this.starAVG,
+      eveluateCount: eveluateCount ?? this.eveluateCount,
+      sold: sold ?? this.sold,
+      priceDiscount: priceDiscount ?? this.priceDiscount,
+    );
   }
 
   Map<String, dynamic> toMap() {
@@ -78,7 +83,8 @@ class ProductModel {
       'number': number,
       'starAVG': starAVG,
       'eveluateCount': eveluateCount,
-      'sold': sold
+      'sold': sold,
+      'priceDiscount': priceDiscount
     };
   }
 
@@ -95,7 +101,8 @@ class ProductModel {
       'number': number,
       'starAVG': starAVG,
       'eveluateCount': eveluateCount,
-      'sold': sold
+      'sold': sold,
+      'priceDiscount': priceDiscount
     };
   }
 
@@ -105,13 +112,14 @@ class ProductModel {
       'image': image,
       'status': status,
       'weight': weight,
-      'cost': price,
+      'cost':
+          price == priceDiscount || priceDiscount == 0 ? price : priceDiscount,
       'name': name,
       'detail': detail,
       'quantity': number,
       'starAVG': starAVG,
       'eveluateCount': eveluateCount,
-      'sold': sold
+      'sold': sold,
     };
   }
 
@@ -129,6 +137,7 @@ class ProductModel {
       starAVG: double.tryParse((map['starAVG'] ?? 0).toString()),
       eveluateCount: map['eveluateCount'],
       sold: map['sold'],
+      priceDiscount: double.tryParse((map['priceDiscount'] ?? 0).toString()),
     );
   }
   factory ProductModel.fromMap1(Map<String, dynamic> map) {
@@ -138,6 +147,7 @@ class ProductModel {
       status: map['status'],
       weight: double.tryParse((map['weight'] ?? 0).toString()),
       price: double.tryParse((map['price'] ?? 0).toString()),
+      priceDiscount: double.tryParse((map['priceDiscount'] ?? 0).toString()),
       quantity: map['quantity'],
       name: map['name'],
       detail: map['detail'],

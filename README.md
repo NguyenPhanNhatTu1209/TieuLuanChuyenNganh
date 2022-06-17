@@ -1,18 +1,14 @@
-## Đề tài tiểu luận chuyên ngành
-### Tên đề tài: Xây ựng ứng dụng web và di động bán thực phẩm tươi sống
-#### Nhóm thực hiện: Nhóm 5
+## Đề tài khóa luận tốt nghiệp
+### Tên đề tài: Xây ựng ứng di động bán thực phẩm tươi sống
+#### Nhóm thực hiện: Nhóm 4
 
 #### Người thực hiện:
 * Nguyễn Phan Nhật Tú - 18110232 :books:
 * Võ Ngọc Nghĩa- 18110164 :books:
-* Bùi Trung Hiếu- 18110105 :books:
 
 ### Hướng dẫn cài đặt
 
 #### Backend
-
-●	Clone source Backend ở link: https://github.com/NguyenPhanNhatTu1209/FreshFood.git
-
 ●	Tạo file .env bằng cấp với folder .env
 	- Thêm các thuộc tính: 
 ```
@@ -41,9 +37,6 @@
 
 #### Frontend
 ##### Flutter
-
-●	Clone source ở link: https://github.com/vongocnghia1610/FreshFood_Flutter
-
 ●	Cài đặt ngôn ngữ Dart và Flutter (https://dart.dev/get-dart)
 
 ●	Mở VSCode, chọn File – Open folder chọn folder flutter_FreshFood
@@ -57,9 +50,7 @@
 
 #### Frontend
 ##### ReactJS 
-Deploy: https://fresh-food-b8c94.web.app/
-
-●	Clone source ở link: https://github.com/buitrunghieu2000/DoAnCNPMMreplace
+Deploy: https://fresh-food-b8c94.web.app
 
 ●	Mở terminal chạy lệnh yarn để cài toàn bộ thư viện
 

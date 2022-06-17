@@ -15,8 +15,6 @@ class GroupProductController extends GetxController {
 
   getGroupProduct() {
     GroupProductRepository().getGroupProduct().then((value) {
-      print("zodiml");
-      print(value);
       if (value.isNotEmpty) {
         groupProduct.addAll(value);
         _listGroupProductController.add(groupProduct);

@@ -41,10 +41,8 @@ Future<void> requestPermission() async {
 }
 
 handleReceiveNotification(context) async {
-  print('chayne');
   await requestPermission();
   // FirebaseMessaging.instance.getInitialMessage().then((RemoteMessage message) {
-  //   print('chayne1');
 
   //   if (message != null) {
   //     if (message.data != null) {

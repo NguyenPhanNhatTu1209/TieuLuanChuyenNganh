@@ -1,13 +1,8 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:freshfood/src/models/eveluate.dart';
-import 'package:freshfood/src/models/product.dart';
 import 'package:freshfood/src/pages/payment/widget/default_button.dart';
-import 'package:freshfood/src/pages/products/widget/bottom_navigation_product.dart';
-import 'package:freshfood/src/public/styles.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
@@ -40,7 +35,6 @@ class _EveluatePageState extends State<EveluatePage> {
       element.star = 5;
       element.content = "";
     });
-    print(widget.listProduct);
   }
 
   @override
@@ -104,13 +98,11 @@ class _EveluatePageState extends State<EveluatePage> {
                             splashColor: Colors.grey,
                             child: Row(
                               children: [
-                                CachedNetworkImage(
-                                  imageUrl: productModel.image[0],
+                                Image.network(
+                                  productModel.image[0],
                                   fit: BoxFit.cover,
                                   height: 50.sp,
                                   width: 50.sp,
-                                  errorWidget: (context, url, error) =>
-                                      Icon(Icons.error),
                                 ),
                                 SizedBox(
                                   width: 10.sp,

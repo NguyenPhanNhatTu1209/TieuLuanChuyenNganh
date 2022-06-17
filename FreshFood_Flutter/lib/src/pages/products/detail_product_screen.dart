@@ -25,11 +25,6 @@ class DetailProductPage extends StatefulWidget {
 
 class _DetailProductPageState extends State<DetailProductPage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  // List<String> listImage = [
-  //   "https://photo-cms-baonghean.zadn.vn/w607/Uploaded/2021/tuqzxgazsnzm/2018_11_08/143638-1.jpg",
-  //   "https://img.lovepik.com/element/40031/4942.png_860.png",
-  //   "http://img.vinanet.vn/zoom/500/Uploaded/ThuHai/NongSan/pork_JSGL.jpg",
-  // ];
   int selectedImage = 0;
   final productController = Get.put(ProductDetailController());
   final cartController = Get.put(CartController());
@@ -37,7 +32,6 @@ class _DetailProductPageState extends State<DetailProductPage> {
   void initState() {
     super.initState();
     productController.getDetailProduct(widget.id);
-    // listImage = productController.product.image;
   }
 
   @override
@@ -126,7 +120,6 @@ class _DetailProductPageState extends State<DetailProductPage> {
                                             selectedImage = 0;
                                           else
                                             selectedImage++;
-                                          // print(selectedImage);
                                         }
                                         if (details.primaryVelocity > 0) {
                                           if (selectedImage == 0)
@@ -139,14 +132,11 @@ class _DetailProductPageState extends State<DetailProductPage> {
                                     },
                                     child: AspectRatio(
                                       aspectRatio: 1.2,
-                                      child: CachedNetworkImage(
-                                        imageUrl:
-                                            _.product.image[selectedImage],
+                                      child: Image.network(
+                                        _.product.image[selectedImage],
                                         fit: BoxFit.fitHeight,
                                         width: 80.w,
                                         height: 70.w,
-                                        errorWidget: (context, url, error) =>
-                                            Icon(Icons.error),
                                       ),
                                     ),
                                   ),
@@ -194,13 +184,45 @@ class _DetailProductPageState extends State<DetailProductPage> {
                               init: productController,
                               builder: (_) => _.product.price == null
                                   ? Container()
-                                  : Text(
-                                      formatMoney(_.product.price),
-                                      style: TextStyle(
-                                          color: kPrimaryColor,
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 6.w),
-                                    ),
+                                  : _.product.price ==
+                                              _.product.priceDiscount ||
+                                          _.product.priceDiscount == 0
+                                      ? Text(
+                                          formatMoney(_.product.price),
+                                          style: TextStyle(
+                                              color: kPrimaryColor,
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 6.w),
+                                        )
+                                      : Text(
+                                          formatMoney(_.product.price),
+                                          style: TextStyle(
+                                              decoration:
+                                                  TextDecoration.lineThrough,
+                                              color: Colors.red,
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 4.w),
+                                        ),
+                            ),
+                          ),
+                          SizedBox(height: 3.w),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 6.w),
+                            child: GetBuilder<ProductDetailController>(
+                              init: productController,
+                              builder: (_) => _.product.priceDiscount == null
+                                  ? Container()
+                                  : _.product.price ==
+                                              _.product.priceDiscount ||
+                                          _.product.priceDiscount == 0
+                                      ? SizedBox()
+                                      : Text(
+                                          formatMoney(_.product.priceDiscount),
+                                          style: TextStyle(
+                                              color: kPrimaryColor,
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 6.w),
+                                        ),
                             ),
                           ),
                           SizedBox(height: 3.w),
@@ -427,12 +449,17 @@ class _DetailProductPageState extends State<DetailProductPage> {
                 color: selectedImage == index
                     ? kPrimaryColor
                     : Colors.transparent)),
-        child: CachedNetworkImage(
-          imageUrl: listImage[index],
+        child:
+            // CachedNetworkImage(
+            //   imageUrl: listImage[index],
+            //   fit: BoxFit.cover,
+            //   // height: 70.sp,
+            //   // width: 70.sp,
+            //   errorWidget: (context, url, error) => Icon(Icons.error),
+            // ),
+            Image.network(
+          listImage[index],
           fit: BoxFit.cover,
-          // height: 70.sp,
-          // width: 70.sp,
-          errorWidget: (context, url, error) => Icon(Icons.error),
         ),
       ),
     );

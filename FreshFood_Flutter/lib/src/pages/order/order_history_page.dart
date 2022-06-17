@@ -25,7 +25,6 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
   @override
   void initState() {
     super.initState();
-    print(widget.history);
   }
 
   @override

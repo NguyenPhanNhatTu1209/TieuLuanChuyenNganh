@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:freshfood/src/helpers/money_formatter.dart';
 import 'package:freshfood/src/models/product.dart';
 import 'package:freshfood/src/pages/home/controllers/product_controller.dart';
@@ -41,12 +42,11 @@ class _ProductCardState extends State<ProductCard> {
                   topLeft: Radius.circular(10),
                   topRight: Radius.circular(10),
                 ),
-                child: CachedNetworkImage(
-                  imageUrl: widget.product.image[0],
+                child: Image.network(
+                  widget.product.image[0],
                   fit: BoxFit.cover,
                   height: 100.sp,
                   width: 50.w,
-                  errorWidget: (context, url, error) => Icon(Icons.error),
                 ),
               ),
               Container(
@@ -69,28 +69,87 @@ class _ProductCardState extends State<ProductCard> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Container(
-                            height: 10.w,
                             child: Text(widget.product.name.toUpperCase(),
-                                maxLines: 2,
+                                maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                   fontSize: 12,
                                 )),
                           ),
-                          Text('Số lượng: ${widget.product.quantity}',
-                              maxLines: 1,
-                              style: TextStyle(
-                                  color: kPrimaryColor.withOpacity(0.5),
-                                  fontSize: 12)),
-                          SizedBox(height: 5.sp),
-                          Text(
-                            formatMoney(widget.product.price),
-                            style: Theme.of(context)
-                                .textTheme
-                                .button
-                                .copyWith(color: kPrimaryColor),
+                          Row(
+                            children: [
+                              Text(
+                                formatMoney(widget.product.price),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .button
+                                    .copyWith(
+                                      fontSize: widget.product.priceDiscount ==
+                                                  0 ||
+                                              widget.product.priceDiscount ==
+                                                  widget.product.price
+                                          ? 13.sp
+                                          : 9.sp,
+                                      decoration:
+                                          widget.product.priceDiscount == 0 ||
+                                                  widget.product
+                                                          .priceDiscount ==
+                                                      widget.product.price
+                                              ? null
+                                              : TextDecoration.lineThrough,
+                                      color: widget.product.priceDiscount ==
+                                                  0 ||
+                                              widget.product.priceDiscount ==
+                                                  widget.product.price
+                                          ? kPrimaryColor
+                                          : Colors.red,
+                                    ),
+                              ),
+                              widget.product.priceDiscount == 0 ||
+                                      widget.product.priceDiscount ==
+                                          widget.product.price
+                                  ? SizedBox()
+                                  : Text(
+                                      formatMoney(widget.product.priceDiscount),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .button
+                                          .copyWith(
+                                              color: kPrimaryColor,
+                                              fontSize: 13.sp),
+                                    ),
+                            ],
+                          ),
+                          IgnorePointer(
+                            child: RatingBar.builder(
+                              initialRating: widget.product.starAVG.toDouble(),
+                              direction: Axis.horizontal,
+                              allowHalfRating: true,
+                              itemCount: 5,
+                              itemSize: 6.w,
+                              // itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                              itemBuilder: (context, _) => Icon(
+                                Icons.star,
+                                color: Colors.amber,
+                              ),
+
+                              onRatingUpdate: (rating) {},
+                            ),
                           ),
                           SizedBox(height: 5.sp),
+                          Container(
+                            child: Align(
+                              alignment: Alignment.bottomRight,
+                              child: Text(
+                                'Đã bán ' + widget.product.sold.toString(),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .button
+                                    .copyWith(color: Colors.grey),
+                                textAlign: TextAlign.right,
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),

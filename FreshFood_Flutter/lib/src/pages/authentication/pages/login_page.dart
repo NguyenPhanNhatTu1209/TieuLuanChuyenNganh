@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:freshfood/src/models/user.dart';
-import 'package:freshfood/src/pages/home/home_page.dart';
 import 'package:freshfood/src/providers/user_provider.dart';
 import 'package:freshfood/src/public/styles.dart';
 import 'package:freshfood/src/repository/authentication_repository.dart';
 import 'package:freshfood/src/routes/app_pages.dart';
 import 'package:freshfood/src/utils/snackbar.dart';
 import 'package:get/get.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginPages extends StatefulWidget {
   final VoidCallback toggleView;
@@ -22,6 +23,51 @@ class _LoginPagesState extends State<LoginPages> {
   String email;
   String password;
   bool _isObscure = true;
+  GoogleSignIn _googleSignIn = GoogleSignIn();
+
+  Future<void> _handleSignIn() async {
+    try {
+      await _googleSignIn.signIn();
+      var user = _googleSignIn.currentUser;
+      showDialog(
+        context: context,
+        builder: (context) {
+          return Center(
+            child: CircularProgressIndicator(
+              valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+            ),
+          );
+        },
+        barrierColor: Color(0x80000000),
+        barrierDismissible: false,
+      );
+      AuthenticationRepository()
+          .loginWithGoogle(user.email, user.displayName, user.photoUrl)
+          .then((value) {
+        Get.back();
+        if (value == null) {
+          GetSnackBar getSnackBar = GetSnackBar(
+            title: 'Đăng nhập thất bại!',
+            subTitle: 'Sai tài khoản hoặc mật khẩu',
+          );
+          getSnackBar.show();
+        } else {
+          userProvider.setUser(
+            UserModel.fromLogin(value),
+          );
+          GetSnackBar getSnackBar = GetSnackBar(
+            title: 'Đăng nhập thành công!',
+            subTitle: 'Đăng nhập thành công',
+          );
+          getSnackBar.show();
+        }
+      });
+    } catch (error) {
+      print(error);
+    }
+  }
+
+  Future<void> _handleSignOut() => _googleSignIn.disconnect();
 
   @override
   Widget build(BuildContext context) {
@@ -162,7 +208,6 @@ class _LoginPagesState extends State<LoginPages> {
                         userProvider.setUser(
                           UserModel.fromLogin(value),
                         );
-                        print("dang nhap thanh cong");
                         GetSnackBar getSnackBar = GetSnackBar(
                           title: 'Đăng nhập thành công!',
                           subTitle: 'Đăng nhập thành công',
@@ -188,6 +233,20 @@ class _LoginPagesState extends State<LoginPages> {
                         fontWeight: FontWeight.w600,
                       ),
                     ),
+                  ),
+                ),
+              ),
+              Container(
+                height: 46.8,
+                margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                child: SignInButton(
+                  Buttons.Google,
+                  text: "Sign up with Google",
+                  onPressed: () {
+                    _handleSignIn();
+                  },
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
                   ),
                 ),
               ),

@@ -33,7 +33,6 @@ class _OtpPassPageState extends State<OtpPassPage> {
         .confirmOtp(widget.email, otp)
         .then((value) {
       if (value != null) {
-        print(value['token']);
         tokenUser = value['token'];
         check = true;
       } else {
@@ -60,7 +59,6 @@ class _OtpPassPageState extends State<OtpPassPage> {
   @override
   void initState() {
     super.initState();
-    print(widget.email);
   }
 
   @override

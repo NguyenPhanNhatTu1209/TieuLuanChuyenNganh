@@ -29,11 +29,7 @@ class CartRepository {
   Future<dynamic> updateCart(List<Map<String, dynamic>> cart) async {
     var body = cart;
     var response = await HandleApis().putArray(ApiGateway.UPDATE_CART, body);
-    print(jsonEncode(body));
 
-    print("chonayne");
-
-    print(response.statusCode);
     if (response.statusCode == 200) {
       return jsonDecode(response.body)['data'];
     }

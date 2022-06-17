@@ -91,7 +91,6 @@ class _OrderPageAdminState extends State<OrderPageAdmin>
                 ),
                 textInputAction: TextInputAction.search,
                 onSubmitted: (value) {
-                  print(value);
                   orderController.getOrderByAdmin(
                       search: value, limit: 10, skip: 1);
                 }),

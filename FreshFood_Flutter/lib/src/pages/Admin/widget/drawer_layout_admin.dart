@@ -9,6 +9,7 @@ import 'package:freshfood/src/routes/app_pages.dart';
 import 'package:freshfood/src/services/socket.dart';
 import 'package:freshfood/src/services/socket_emit.dart';
 import 'package:get/get.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
@@ -25,8 +26,9 @@ class _DrawerLayoutAdminState extends State<DrawerLayoutAdmin> {
     "Quản lý người dùng",
     "Quản lý nhân viên",
     "Tin nhắn",
-    "Quản lý tài khoản VNPAY",
-    "Quản lý tài khoản PAYPAL",
+    "Quản lý giảm giá",
+    "Quản lý bộ câu hỏi",
+    "Nhập/Xuất kho",
     "Thống kê",
     "Thông tin cá nhân",
     "Đổi mật khẩu",
@@ -40,8 +42,8 @@ class _DrawerLayoutAdminState extends State<DrawerLayoutAdmin> {
         children: [
           Column(
             children: [
-              GestureDetector(
-                onTap: () {},
+              Container(
+                height: 50.w,
                 child: UserAccountsDrawerHeader(
                   decoration: BoxDecoration(
                     image: DecorationImage(
@@ -51,6 +53,8 @@ class _DrawerLayoutAdminState extends State<DrawerLayoutAdmin> {
                       fit: BoxFit.contain,
                     ),
                   ),
+                  accountEmail: null,
+                  accountName: null,
                 ),
               ),
               GestureDetector(
@@ -100,25 +104,40 @@ class _DrawerLayoutAdminState extends State<DrawerLayoutAdmin> {
               ),
               GestureDetector(
                 onTap: () {
-                  Get.toNamed(Routes.ADMIN_WALLET, arguments: {'method': 2});
+                  Get.toNamed(
+                    Routes.MANAGER_DISCOUNT,
+                  );
                 },
                 child: _buildLineDrawer(
                   context,
                   4,
-                  PhosphorIcons.wallet_bold,
+                  PhosphorIcons.tag,
                 ),
               ),
               GestureDetector(
                 onTap: () {
-                  Get.toNamed(Routes.ADMIN_WALLET, arguments: {'method': 1});
+                  Get.toNamed(
+                    Routes.MANAGER_GROUP_QUESTION,
+                  );
                 },
                 child: _buildLineDrawer(
                   context,
                   5,
-                  PhosphorIcons.wallet_bold,
+                  PhosphorIcons.question,
                 ),
               ),
-
+              GestureDetector(
+                onTap: () {
+                  Get.toNamed(
+                    Routes.MANAGER_INVENTORY_HISTORY,
+                  );
+                },
+                child: _buildLineDrawer(
+                  context,
+                  6,
+                  PhosphorIcons.clipboard_text,
+                ),
+              ),
               GestureDetector(
                 onTap: () {
                   Get.toNamed(
@@ -127,7 +146,7 @@ class _DrawerLayoutAdminState extends State<DrawerLayoutAdmin> {
                 },
                 child: _buildLineDrawer(
                   context,
-                  6,
+                  7,
                   PhosphorIcons.chart_line_up_bold,
                 ),
               ),
@@ -138,7 +157,7 @@ class _DrawerLayoutAdminState extends State<DrawerLayoutAdmin> {
                 },
                 child: _buildLineDrawer(
                   context,
-                  7,
+                  8,
                   PhosphorIcons.user_bold,
                 ),
               ),
@@ -148,7 +167,7 @@ class _DrawerLayoutAdminState extends State<DrawerLayoutAdmin> {
                 },
                 child: _buildLineDrawer(
                   context,
-                  8,
+                  9,
                   PhosphorIcons.lock,
                 ),
               ),
@@ -159,10 +178,12 @@ class _DrawerLayoutAdminState extends State<DrawerLayoutAdmin> {
                   socket.disconnect();
                   userProvider.setUser(null);
                   Get.offAllNamed(Routes.ROOT);
+                  GoogleSignIn _googleSignIn = GoogleSignIn();
+                  _googleSignIn.disconnect();
                 },
                 child: _buildLineDrawer(
                   context,
-                  9,
+                  10,
                   PhosphorIcons.sign_out_bold,
                 ),
               ),

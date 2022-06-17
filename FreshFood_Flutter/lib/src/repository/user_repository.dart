@@ -16,27 +16,13 @@ class UserRepository {
     return [];
   }
 
-  Future<dynamic> updateImage({File avatar}) async {
-    var request = http.MultipartRequest(
-        'POST', Uri.https(root_url, ApiGateway.UPDATE_IMAGE));
-    request.headers["Content-Type"] = 'multipart/form-data';
-    request.headers["Authorization"] =
-        'Bearer ' + (userProvider.user == null ? '' : userProvider.user.token);
-    request.files.add(http.MultipartFile.fromBytes(
-      "image",
-      avatar.readAsBytesSync(),
-      filename: avatar.path,
-    ));
-    var response = await http.Response.fromStream(await request.send());
-    print("phongtu");
-
-    print(response.statusCode);
-    if ([200, 201].contains(response.statusCode)) {
-      var jsonResult = jsonDecode(response.body)['data'];
-      return jsonResult;
+  Future<bool> updateImage({String avatar}) async {
+    var body = {"avatar": avatar};
+    var response = await HandleApis().post(ApiGateway.UPDATE_IMAGE, body);
+    if (response.statusCode == 200) {
+      return true;
     }
-
-    return null;
+    return false;
   }
 
   Future<List<dynamic>> getAllAddress() async {
@@ -76,10 +62,7 @@ class UserRepository {
       "isMain": isMain,
       "id": id,
     };
-    print(body);
     var response = await HandleApis().put(ApiGateway.UPDATE_ADDRESS, body);
-    print("response ne");
-    print(response.statusCode);
 
     if (response.statusCode == 200) {
       return true;
@@ -103,7 +86,6 @@ class UserRepository {
       ApiGateway.GET_MESSAGE,
       'skip=$skip&idRoom=$idRoom',
     );
-    print(response.body.toString());
     if (response.statusCode == 200) {
       return jsonDecode(response.body)['data'];
     }

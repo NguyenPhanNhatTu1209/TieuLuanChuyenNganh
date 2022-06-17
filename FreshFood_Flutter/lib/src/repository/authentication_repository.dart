@@ -9,14 +9,23 @@ class AuthenticationRepository {
       "email": email,
       "password": password,
     };
-    print(jsonEncode(body));
     var response = await HandleApis().post(
       ApiGateway.LOGIN,
       body,
     );
+    if (response.statusCode == 200) {
+      return jsonDecode(response.body)['data'];
+    }
+    return null;
+  }
 
-    print(body);
-
+  Future<Map<String, dynamic>> loginWithGoogle(
+      String email, String name, String avatar) async {
+    var body = {"email": email, "name": name, "avatar": avatar};
+    var response = await HandleApis().post(
+      ApiGateway.LOGIN_WITH_GOOGLE,
+      body,
+    );
     if (response.statusCode == 200) {
       return jsonDecode(response.body)['data'];
     }
@@ -35,7 +44,6 @@ class AuthenticationRepository {
       ApiGateway.REGISTER,
       body,
     );
-    print(response.body);
     if (response.statusCode == 200) {
       return jsonDecode(response.body)['data'];
     }
@@ -48,7 +56,6 @@ class AuthenticationRepository {
       ApiGateway.CHANGE_PASSWORD,
       body,
     );
-    print(response.body);
     if (response.statusCode == 200) {
       return true;
     }

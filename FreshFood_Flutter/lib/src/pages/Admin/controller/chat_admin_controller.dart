@@ -80,7 +80,6 @@ class MessageAdminController extends ChangeNotifier {
   }
 
   insertMessage(dynamic messages) {
-    print(messages);
     int index =
         listMessage.indexWhere((element) => element['_id'] == messages['_id']);
     if (index == -1) {

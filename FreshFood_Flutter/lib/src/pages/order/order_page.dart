@@ -75,15 +75,6 @@ class _OrderPageState extends State<OrderPage>
             "Đơn Hàng",
           ),
         ),
-        actions: [
-          IconButton(
-            onPressed: () => {Get.toNamed(Routes.CHAT)},
-            icon: Icon(
-              PhosphorIcons.messenger_logo,
-              size: 7.w,
-            ),
-          ),
-        ],
       ),
       body: Column(
         children: [

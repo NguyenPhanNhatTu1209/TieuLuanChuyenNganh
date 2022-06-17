@@ -45,7 +45,6 @@ class UserProvider extends ChangeNotifier {
   }
 
   // getInfoUser(Map<String, dynamic> data) {
-  //   print(data['role']);
   //   _user.userId = data['_id'];
   //   _user.address = data['address'];
   //   _user.fullName = data['displayName'];

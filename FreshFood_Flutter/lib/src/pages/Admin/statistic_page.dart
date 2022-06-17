@@ -57,7 +57,7 @@ class StatisticAdminPageState extends State<StatisticAdminPage> {
       drawer: Container(
         width: 70.w,
         child: Drawer(
-          child: DrawerLayoutAdmin(status: 6),
+          child: DrawerLayoutAdmin(status: 7),
         ),
       ),
       appBar: AppBar(

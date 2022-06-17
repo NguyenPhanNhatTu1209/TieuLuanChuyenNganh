@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class ProductImage extends StatelessWidget {
@@ -19,12 +18,20 @@ class ProductImage extends StatelessWidget {
         ? SizedBox.shrink()
         : Padding(
             padding: EdgeInsets.all(this.padding ?? 0),
-            child: CachedNetworkImage(
-              imageUrl: this.image,
+            child: Image.network(
+              this.image,
               fit: BoxFit.cover,
               height: this.height,
               width: this.width,
-              errorWidget: (context, url, error) => Icon(Icons.error),
+              errorBuilder: (BuildContext context, Object exception,
+                  StackTrace stackTrace) {
+                return Image.network(
+                  'https://mypharma.vn/wp-content/uploads/2019/11/thuc-pham-bo-sung-sat.jpg',
+                  fit: BoxFit.cover,
+                  height: this.height,
+                  width: this.width,
+                );
+              },
             ),
           );
   }

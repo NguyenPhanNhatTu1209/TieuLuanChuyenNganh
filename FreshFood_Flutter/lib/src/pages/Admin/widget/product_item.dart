@@ -80,7 +80,7 @@ class _ProductItem extends State<ProductItem> {
                     Row(
                       children: [
                         Text(
-                          "Số lượng sản phẩm còn ",
+                          "Kho: ",
                           style: TextStyle(
                             fontSize: 4.w,
                             color: Colors.black,
@@ -103,7 +103,7 @@ class _ProductItem extends State<ProductItem> {
                     Row(
                       children: [
                         Text(
-                          "Số lượng sản phẩm đã bán ",
+                          "Đã bán: ",
                           style: TextStyle(
                             fontSize: 3.5.w,
                             color: Colors.black,

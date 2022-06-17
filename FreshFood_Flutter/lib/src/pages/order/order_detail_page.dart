@@ -264,6 +264,31 @@ class _OrderDetailPageState extends State<OrderDetailPage> {
                       Row(
                         children: [
                           Text(
+                            'Tổng tiền sản phẩm:',
+                            style: TextStyle(
+                              // color: colorTitle,
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 76.sp,
+                          ),
+                          Container(
+                            child: Text(
+                              formatMoney(widget.order.totalMoneyProduct),
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text(
                             'Giá ship:',
                             style: TextStyle(
                               // color: colorTitle,
@@ -275,7 +300,6 @@ class _OrderDetailPageState extends State<OrderDetailPage> {
                             width: 143.sp,
                           ),
                           Container(
-                            padding: EdgeInsets.only(top: 10.sp),
                             child: Text(
                               formatMoney(widget.order.shipFee),
                               style: TextStyle(
@@ -287,6 +311,64 @@ class _OrderDetailPageState extends State<OrderDetailPage> {
                           ),
                         ],
                       ),
+                      widget.order.discountMoney == null ||
+                              widget.order.discountMoney == 0
+                          ? SizedBox()
+                          : Row(
+                              children: [
+                                Text(
+                                  'Giảm giá: ',
+                                  style: TextStyle(
+                                    // color: colorTitle,
+                                    fontSize: 13.sp,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 132.sp,
+                                ),
+                                Container(
+                                  child: Text(
+                                    '-' +
+                                        formatMoney(widget.order.discountMoney),
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                      widget.order.bonusMoney == null ||
+                              widget.order.bonusMoney == 0
+                          ? SizedBox()
+                          : Row(
+                              children: [
+                                Text(
+                                  'Xu sử dụng: ',
+                                  style: TextStyle(
+                                    // color: colorTitle,
+                                    fontSize: 13.sp,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 118.sp,
+                                ),
+                                Container(
+                                  child: Text(
+                                    '-' + formatMoney(widget.order.bonusMoney),
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                      SizedBox(height: 5.sp),
                       Row(
                         children: [
                           Text(
@@ -301,11 +383,10 @@ class _OrderDetailPageState extends State<OrderDetailPage> {
                             width: 125.sp,
                           ),
                           Container(
-                            padding: EdgeInsets.only(top: 10.sp),
                             child: Text(
                               formatMoney(widget.order.totalMoney),
                               style: TextStyle(
-                                color: Colors.black,
+                                color: Colors.orange,
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -530,20 +611,17 @@ class ProductWidget extends StatelessWidget {
         height: 70.sp,
         child: Material(
             child: InkWell(
-                onTap: () {
-                  // print(order);
-                },
+                onTap: () {},
                 child: Row(
                   children: [
                     SizedBox(
                       width: 10.sp,
                     ),
-                    CachedNetworkImage(
-                      imageUrl: product.image[0],
+                    Image.network(
+                      product.image[0],
                       fit: BoxFit.cover,
                       height: 70.sp,
                       width: 70.sp,
-                      errorWidget: (context, url, error) => Icon(Icons.error),
                     ),
                     SizedBox(
                       width: 20.sp,

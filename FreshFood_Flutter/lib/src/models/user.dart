@@ -9,15 +9,18 @@ class UserModel {
   String name;
   String avatar;
   String token;
-  UserModel(
-      {this.id,
-      this.role,
-      this.fcm,
-      this.email,
-      this.phone,
-      this.name,
-      this.avatar,
-      this.token});
+  int point;
+  UserModel({
+    this.id,
+    this.role,
+    this.fcm,
+    this.email,
+    this.phone,
+    this.name,
+    this.avatar,
+    this.token,
+    this.point,
+  });
   factory UserModel.fromLogin(Map<String, dynamic> data) {
     return UserModel(
       token: data['token'],
@@ -65,6 +68,7 @@ class UserModel {
       phone: map['phone'],
       name: map['name'],
       avatar: map['avatar'],
+      point: map['point'],
     );
   }
 

@@ -25,9 +25,7 @@ class ProductController extends GetxController {
 
   getRecommendProduct() {
     ProductRepository().getRecommendProduct(skip, 10).then((value) {
-      print(value);
       if (value.isNotEmpty) {
-        print("zo rooi ne 1");
 
         _listRecomPro.addAll(value);
         _listRecommendController.add(_listRecomPro);
@@ -50,7 +48,6 @@ class ProductController extends GetxController {
 
   getProduct() {
     ProductRepository().getRecommendProduct(1, 10).then((value) {
-      print(value);
       if (value.isNotEmpty) {
         _listRecomPro.addAll(value);
         _listProductController.add(_listRecomPro);
@@ -60,13 +57,10 @@ class ProductController extends GetxController {
   }
 
   getAllProduct({String search, String groupProduct}) {
-    print(skip);
-    print(search);
     if (skip != -1) {
       ProductRepository()
           .getAllProduct(search, skip, 10, groupProduct)
           .then((value) {
-        print(value);
         if (value != null) {
           listAllProduct.addAll(value);
           _listProductController.add(listAllProduct);
@@ -82,10 +76,7 @@ class ProductController extends GetxController {
 
   getProductUser() {
     ProductRepository().getProductUser().then((value) {
-      print(value);
       if (value.isNotEmpty) {
-        print("zo rooi ne 1");
-
         _listProductUser = value;
         _listProductUserController.add(_listProductUser);
         update();
